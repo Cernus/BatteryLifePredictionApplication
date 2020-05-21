@@ -65,16 +65,16 @@ namespace PredictionApi.Facades
                 if (battery.Discharge_Energy <= GetThreshold())
                 {
                     // DECISION FOREST REGRESSION
-                    apiKey = "tVDT+uJyjuGsQaMho7KgoOo7ERiIcjUeYSmhbA1Vz6dekKQroe+zqogfs6HpSwGkPmxlLfj9UDl64X/+0Wju+w==";
+                    apiKey = "[ANONYMISED]";
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/1f0b15f849eb4659814134fb074fd956/execute?api-version=2.0&format=swagger");
+                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]");
                 }
                 else
                 {
                     // LINEAR REGRESSION
-                    apiKey = "KDP0a8bu3pEGnTyK27xd79ewUxBWyrm3es9FOrRH7fI48UC9iBdjanhGGt9aHxc0jIKwf9OnZSOb09VXoDpWeg==";
+                    apiKey = "[ANONYMISED]";
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/3f597ac1707843fbb40b609fee01b589/execute?api-version=2.0&format=swagger");
+                    client.BaseAddress = new Uri("https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]");
                 }
 
                 HttpResponseMessage response = await client.PostAsJsonAsync("", scoreRequest).ConfigureAwait(false);
@@ -137,22 +137,22 @@ namespace PredictionApi.Facades
                 throw new Exception("Unable to create input file");
             }
 
-            const string StorageContainerName = "generalstoragecontainer";
-            const string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=generalstoragej9239007;AccountKey=H6i9sWfVJBu59x0jzi2SSgCN0JMnxR0aqzIGqz4twgfFZ7zjM7tASfqpr9XtAPNAeQFmWEZDv8n1OH4kiuqd7g==;EndpointSuffix=core.windows.net";
+            const string StorageContainerName = "[ANONYMISED]";
+            const string storageConnectionString = "[ANONYMISED]";
             string apiKey;
             string BaseUrl;
 
             if(decisonForestRegression)
             {
                 // DECISION FOREST REGRESSION
-                apiKey = "tVDT+uJyjuGsQaMho7KgoOo7ERiIcjUeYSmhbA1Vz6dekKQroe+zqogfs6HpSwGkPmxlLfj9UDl64X/+0Wju+w==";
-                BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/1f0b15f849eb4659814134fb074fd956/jobs";
+                apiKey = "[ANONYMISED]";
+                BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]";
             }
             else
             {
                 //  LINEAR REGRESSION
-                apiKey = "KDP0a8bu3pEGnTyK27xd79ewUxBWyrm3es9FOrRH7fI48UC9iBdjanhGGt9aHxc0jIKwf9OnZSOb09VXoDpWeg==";
-                BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/3f597ac1707843fbb40b609fee01b589/jobs";
+                apiKey = "[ANONYMISED]";
+                BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]";
             }
 
             UploadFileToBlob(filePath, inputFileName, StorageContainerName, storageConnectionString);
@@ -242,14 +242,14 @@ namespace PredictionApi.Facades
                 if (decisonForestRegression)
                 {
                     // DECISION FOREST REGRESSION
-                    apiKey = "tVDT+uJyjuGsQaMho7KgoOo7ERiIcjUeYSmhbA1Vz6dekKQroe+zqogfs6HpSwGkPmxlLfj9UDl64X/+0Wju+w==";
-                    BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/1f0b15f849eb4659814134fb074fd956/jobs";
+                    apiKey = "[ANONYMISED]";
+                    BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]";
                 }
                 else
                 {
                     //  LINEAR REGRESSION
-                    apiKey = "KDP0a8bu3pEGnTyK27xd79ewUxBWyrm3es9FOrRH7fI48UC9iBdjanhGGt9aHxc0jIKwf9OnZSOb09VXoDpWeg==";
-                    BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/5a2852d9d5ca47d29a16880c797221e5/services/3f597ac1707843fbb40b609fee01b589/jobs";
+                    apiKey = "[ANONYMISED]";
+                    BaseUrl = "https://ussouthcentral.services.azureml.net/workspaces/[ANONYMISED]";
                 }
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
