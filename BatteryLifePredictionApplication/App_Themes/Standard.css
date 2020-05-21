@@ -1,0 +1,25 @@
+﻿hr {
+    border-color: black;
+}
+
+.validationText {
+    color: red;
+}
+
+.successText {
+    color: green;
+}
+
+@media only screen and (max-width: 1023px) {
+    .navtitle {
+        max-width: 173px;
+        padding: 5px 0 0 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .navtitle {
+        max-width: none;
+        padding: 15px 15px;
+    }
+}
